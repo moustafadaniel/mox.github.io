@@ -6,113 +6,100 @@
     <title>MoxTox Apps</title>
     <style>
         /* RESET & BASIC SETUP */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #121212; /* Dark clean background */
+            background-color: #121212;
             color: #ffffff;
             line-height: 1.6;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         /* HEADER */
-        header {
-            padding: 40px 20px;
-        }
-
+        header { padding: 50px 20px; }
         h1 {
             font-size: 3rem;
             font-weight: 800;
-            background: linear-gradient(90deg, #ff8a00, #e52e71);
+            background: linear-gradient(90deg, #00C9FF, #92FE9D); /* Fresh Green/Blue for apps */
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 10px;
         }
-
-        .subtitle {
-            font-size: 1.2rem;
-            color: #a0a0a0;
-        }
+        .subtitle { font-size: 1.2rem; color: #a0a0a0; }
 
         /* MAIN CONTENT */
         main {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 20px;
+            flex: 1;
         }
 
-        .intro {
-            margin-bottom: 50px;
-            font-size: 1.1rem;
-        }
+        .intro { margin-bottom: 50px; font-size: 1.1rem; color: #ccc; }
 
         /* CARD GRID */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            justify-content: center;
         }
 
+        /* CARD STYLES */
         .card {
             background-color: #1e1e1e;
             border-radius: 15px;
             padding: 30px;
             border: 1px solid #333;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
-        .card:hover {
+        /* Link Wrapper for Cards */
+        .card-link { text-decoration: none; color: inherit; display: block; }
+        
+        .card-link:hover .card {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(229, 46, 113, 0.2);
-            border-color: #e52e71;
+            box-shadow: 0 10px 20px rgba(0, 201, 255, 0.2);
+            border-color: #00C9FF;
         }
 
-        .card h3 {
-            margin-bottom: 10px;
-            color: #fff;
+        .card h3 { margin: 10px 0; color: #fff; font-size: 1.5rem; }
+        .card p { color: #bbb; font-size: 0.95rem; }
+        .emoji-icon { font-size: 3.5rem; margin-bottom: 10px; display: block; }
+
+        /* COMING SOON CARD (Not Clickable) */
+        .card.coming-soon {
+            opacity: 0.6;
+            border-style: dashed;
         }
 
-        .card p {
-            color: #bbb;
-            font-size: 0.9rem;
-        }
-
-        .emoji-icon {
-            font-size: 3rem;
-            margin-bottom: 15px;
-            display: block;
-        }
-
-        /* FOOTER */
+        /* FOOTER & LINKS */
         footer {
             margin-top: 60px;
-            padding: 20px;
+            padding: 30px;
+            background-color: #1a1a1a;
             color: #555;
-            font-size: 0.8rem;
+            font-size: 0.9rem;
+            border-top: 1px solid #333;
         }
 
-        /* BUTTON */
-        .btn {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 25px;
-            background-color: #fff;
-            color: #000;
+        .legal-links { margin-bottom: 15px; }
+        .legal-links a {
+            color: #888;
             text-decoration: none;
-            border-radius: 50px;
+            margin: 0 10px;
             font-weight: bold;
-            transition: opacity 0.2s;
+            transition: color 0.2s;
         }
-        
-        .btn:hover {
-            opacity: 0.8;
-        }
+        .legal-links a:hover { color: #fff; }
 
     </style>
 </head>
@@ -120,49 +107,47 @@
 
     <header>
         <h1>MoxTox Apps</h1>
-        <p class="subtitle">We code so you don't have to.</p>
+        <p class="subtitle">Simple. Clean. Useful.</p>
     </header>
 
     <main>
         <div class="intro">
-            <p>Welcome to the digital headquarters of <strong>MoxTox</strong>. We build apps that are 99% bug-free (the other 1% is a "feature"). Take a look at our masterpieces below.</p>
+            <p>Welcome to <strong>MoxTox</strong>. Check out our latest apps below.</p>
         </div>
 
         <div class="grid">
-            <!-- App 1 -->
-            <div class="card">
-                <span class="emoji-icon">🥑</span>
-                <h3>The Guac Calculator</h3>
-                <p>Mathematically proves you can't afford the extra guacamole, but you'll buy it anyway.</p>
+            <!-- APP 1: TASBOOHI (Clickable) -->
+            <a href="https://play.google.com/store/apps/details?id=com.tasboohi.app" target="_blank" class="card-link">
+                <div class="card">
+                    <span class="emoji-icon">📿</span>
+                    <h3>Tasboohi</h3>
+                    <p>The digital Tasbeeh counter for your daily Dhikr. Simple, clean, and spiritual.</p>
+                    <p style="color: #00C9FF; margin-top:10px; font-weight:bold;">Download on Play Store &rarr;</p>
+                </div>
+            </a>
+
+            <!-- COMING SOON 1 -->
+            <div class="card coming-soon">
+                <span class="emoji-icon">🚧</span>
+                <h3>Work in Progress</h3>
+                <p>We are cooking up something new.</p>
             </div>
 
-            <!-- App 2 -->
-            <div class="card">
-                <span class="emoji-icon">👻</span>
-                <h3>Ghost Typer</h3>
-                <p>An app that types random things to make you look busy when your boss walks by.</p>
-            </div>
-
-            <!-- App 3 -->
-            <div class="card">
+            <!-- COMING SOON 2 -->
+            <div class="card coming-soon">
                 <span class="emoji-icon">🚀</span>
-                <h3>To The Moon</h3>
-                <p>A crypto tracker that only goes up. (Disclaimer: Not financial advice. It's just a lying UI).</p>
-            </div>
-            
-            <!-- App 4 -->
-            <div class="card">
-                <span class="emoji-icon">💤</span>
-                <h3>Nap Optimizer</h3>
-                <p>Calculates exactly how many minutes you can sleep before panic sets in.</p>
+                <h3>Coming Soon</h3>
+                <p>Rest of the apps are launching shortly!</p>
             </div>
         </div>
-
-        <a href="#" class="btn">Hire Us (Please)</a>
     </main>
 
     <footer>
-        &copy; 2023 MoxTox Apps. Made with caffeine and anxiety.
+        <div class="legal-links">
+            <a href="privacy_policy.html">Privacy Policy</a> | 
+            <a href="terms_of_use.html">Terms of Use</a>
+        </div>
+        &copy; 2023 MoxTox Apps.
     </footer>
 
 </body>
