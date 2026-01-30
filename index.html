@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoxTox Apps</title>
+    <style>
+        /* RESET & BASIC SETUP */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212; /* Dark clean background */
+            color: #ffffff;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        /* HEADER */
+        header {
+            padding: 40px 20px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, #ff8a00, #e52e71);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #a0a0a0;
+        }
+
+        /* MAIN CONTENT */
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .intro {
+            margin-bottom: 50px;
+            font-size: 1.1rem;
+        }
+
+        /* CARD GRID */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #1e1e1e;
+            border-radius: 15px;
+            padding: 30px;
+            border: 1px solid #333;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(229, 46, 113, 0.2);
+            border-color: #e52e71;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .card p {
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+
+        .emoji-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        /* FOOTER */
+        footer {
+            margin-top: 60px;
+            padding: 20px;
+            color: #555;
+            font-size: 0.8rem;
+        }
+
+        /* BUTTON */
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 25px;
+            background-color: #fff;
+            color: #000;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: opacity 0.2s;
+        }
+        
+        .btn:hover {
+            opacity: 0.8;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>MoxTox Apps</h1>
+        <p class="subtitle">We code so you don't have to.</p>
+    </header>
+
+    <main>
+        <div class="intro">
+            <p>Welcome to the digital headquarters of <strong>MoxTox</strong>. We build apps that are 99% bug-free (the other 1% is a "feature"). Take a look at our masterpieces below.</p>
+        </div>
+
+        <div class="grid">
+            <!-- App 1 -->
+            <div class="card">
+                <span class="emoji-icon">🥑</span>
+                <h3>The Guac Calculator</h3>
+                <p>Mathematically proves you can't afford the extra guacamole, but you'll buy it anyway.</p>
+            </div>
+
+            <!-- App 2 -->
+            <div class="card">
+                <span class="emoji-icon">👻</span>
+                <h3>Ghost Typer</h3>
+                <p>An app that types random things to make you look busy when your boss walks by.</p>
+            </div>
+
+            <!-- App 3 -->
+            <div class="card">
+                <span class="emoji-icon">🚀</span>
+                <h3>To The Moon</h3>
+                <p>A crypto tracker that only goes up. (Disclaimer: Not financial advice. It's just a lying UI).</p>
+            </div>
+            
+            <!-- App 4 -->
+            <div class="card">
+                <span class="emoji-icon">💤</span>
+                <h3>Nap Optimizer</h3>
+                <p>Calculates exactly how many minutes you can sleep before panic sets in.</p>
+            </div>
+        </div>
+
+        <a href="#" class="btn">Hire Us (Please)</a>
+    </main>
+
+    <footer>
+        &copy; 2023 MoxTox Apps. Made with caffeine and anxiety.
+    </footer>
+
+</body>
+</html>
